@@ -9,7 +9,8 @@ export default defineConfig({
 	integrations: [tailwind()],
 	output: "static", // Change this from "server" to "static"
 	site: "https://guysolan.github.io",
-	base: "/",
+	base: "/rwanda-twin-lakes",
+	outDir: './dist',
 	image: {
 		service: passthroughImageService(),
 	},
