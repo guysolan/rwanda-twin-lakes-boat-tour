@@ -10,6 +10,7 @@ export default defineConfig({
 	output: "static", // Change this from "server" to "static"
 	site: "https://guysolan.github.io",
 	base: "/rwanda-twin-lakes-boat-tour",
+	outDir: "./dist",
 	image: {
 		service: passthroughImageService(),
 	},
