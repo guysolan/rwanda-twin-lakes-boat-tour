@@ -1,0 +1,34 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+type Props = HTMLAttributes<"a">;
+
+const { href, class: className, ...props } = Astro.props;
+
+const { pathname } = Astro.url;
+// Update the isActive logic to handle the /wedding path correctly
+const isActive =
+	href === "/wedding"
+		? pathname === "/wedding" || pathname === "/wedding/"
+		: pathname.endsWith(String(href)) || pathname.startsWith(String(href));
+
+// Remove the console.log statement
+---
+
+<a
+	href={href}
+	class:list={[
+		className,
+		{
+			"underline-offset-4 font-bold underline": isActive,
+		},
+	]}
+	{...props}
+>
+	<slot />
+</a>
+<!-- <style>
+	a {
+		@apply inline-block no-underline;
+	}
+</style> -->
