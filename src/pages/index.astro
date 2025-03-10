@@ -62,10 +62,10 @@ import food from "../assets/local-food.png";
 				display: inline-flex;
 				align-items: center;
 				gap: 0.5rem;
-				background-color: #25D366;
+				background-color: #20be5a;
 				color: white;
 				padding: 0.75rem 1.5rem;
-				border-radius: 0.5rem;
+				border-radius: 2rem;
 				font-weight: 500;
 				transition: all 0.2s;
 				box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
@@ -79,7 +79,7 @@ import food from "../assets/local-food.png";
 	</head>
 		<body class="relative mx-auto mt-0 md:px-8 overflow-x-hidden">
 	<!-- Rich background with decorative elements -->
-				<div class="z-0 absolute inset-0 bg-gradient-to-br from-amber-100 via-blue-50 to-amber-50"></div>
+				<div class="z-0 absolute inset-0 bg-gradient-to-br from-amber-100/80 via-sky-50 to-amber-50"></div>
 				
 				<div class="top-0 right-0 z-0 absolute bg-amber-300 opacity-20 blur-2xl rounded-full w-96 h-96 -translate-y-1/3 translate-x-1/4"></div>
 				<div class="top-1/4 left-0 z-0 absolute bg-blue-300 opacity-30 blur-xl rounded-full w-64 h-64 -translate-x-1/3"></div>
@@ -107,7 +107,7 @@ import food from "../assets/local-food.png";
 								</h1>
 							</div>
 							
-						<div class="md:hidden block shadow-xl border-4 border-white rounded-xl overflow-hidden rotate-1 hover:rotate-0 transition-transform duration-300 transform">
+						<div class="md:hidden block shadow-xl rounded-xl overflow-hidden rotate-1 hover:rotate-0 transition-transform duration-300 transform">
 									<Image
 										src={location}
 										alt="Twin Lakes in Rwanda"
@@ -123,7 +123,7 @@ import food from "../assets/local-food.png";
 							<a
 								href="https://wa.me/250726606622?text=Hello%20Abiathar,%20I'm%20interested%20in%20booking%20a%20Twin%20Lakes%20Island%20Tour.%20Please%20provide%20more%20information."
 								target="_blank"
-								class="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 shadow-md hover:shadow-lg px-6 py-3 rounded-full font-medium text-white transition-all"
+								class="whatsapp-button"
 							>
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
@@ -143,7 +143,7 @@ import food from "../assets/local-food.png";
 						<div class="w-full md:w-2/3">
 							<div class="relative">
 								<!-- Main image with frame effect -->
-								<div class="hidden md:block shadow-xl border-4 border-white rounded-xl overflow-hidden rotate-1 hover:rotate-0 transition-transform duration-300 transform">
+								<div class="hidden md:block shadow-xl rounded-xl overflow-hidden rotate-1 hover:rotate-0 transition-transform duration-300 transform">
 									<Image
 										src={location}
 										alt="Twin Lakes in Rwanda"
@@ -500,20 +500,7 @@ import food from "../assets/local-food.png";
 
 											<p class="text-gray-700">
 												{item.description}
-												{item.step === 1 && (
-													<>
-														{" "}
-														Meet at the{" "}
-														<a
-															href="https://maps.app.goo.gl/MZQ9Ck3pNZRXbDjU9"
-															target="_blank"
-															class="text-[var(--accent)] hover:underline"
-														>
-															designated location
-														</a>
-														.
-													</>
-												)}
+												
 											</p>
 										</div>
 									</div>
