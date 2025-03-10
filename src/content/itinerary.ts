@@ -28,7 +28,7 @@ export const itineraryItems: ItineraryItem[] = [
   {
     step: 2,
     title: "Boat Ride to Batutsi Island",
-    description: "Enjoy a scenic boat ride across the crystal-clear waters of Twin Lakes. Take in the breathtaking views of the surrounding volcanic mountains as we approach the island.",
+    description: "Enjoy a scenic boat ride across the serene waters of Twin Lakes. Take in the breathtaking views of the surrounding volcanic mountains as we approach the island.",
     duration: "20 minutes",
     image: boatTourImage,
     imageAlt: "Boat tour on Twin Lakes"
@@ -67,7 +67,7 @@ export const itineraryItems: ItineraryItem[] = [
   },
   {
     step: 7,
-    title: "Island Circumnavigation",
+    title: "Sail Around the Islands",
     description: "Board the boat again for a scenic ride around the islands, offering different perspectives and photo opportunities of this hidden gem.",
       duration: "30 minutes",
       image: fisher,
