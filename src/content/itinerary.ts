@@ -5,7 +5,7 @@ import adiTouring from "../assets/adi-touring.png";
 import islandWalk from "../assets/island-walk.png";
 import islandFromBoat from "../assets/island-from-boat.png";
 import fisher from "../assets/fisher.png";
-import black from "../assets/black.png";
+import banana from "../assets/banana-making.png";
 
 export interface ItineraryItem {
   step: number;
@@ -46,7 +46,7 @@ export const itineraryItems: ItineraryItem[] = [
     title: "Banana Beer Making",
     description: "Learn about the traditional process of making banana beer, a local specialty. You'll see how the islanders have preserved this cultural practice for generations.",
     duration: "30 minutes",
-    image: black,
+    image: banana,
     imageAlt: "Banana beer making demonstration"
   },
   {
