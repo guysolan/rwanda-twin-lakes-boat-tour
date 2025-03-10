@@ -1,0 +1,3 @@
+# Jit
+
+I have had excellent feedback from all the patients I have recommended the Achilles rupture night splint to over the last two years. Patients often dislike sleeping in a boot due to discomfort, and this splint provides a comfortable alternative that prevents them from removing the boot during the night and risking re-rupture. I now recommend it to all of my Achilles patients as a standard part of their recovery protocol. It is a simple yet ingenious solution that significantly improves the patient recovery experience. I believe all healthcare professionals treating Achilles injuries would benefit from incorporating this device into their treatment plans.
