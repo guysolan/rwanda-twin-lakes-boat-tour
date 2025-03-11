@@ -6,6 +6,8 @@ import islandWalk from "../assets/island-walk.png";
 import islandFromBoat from "../assets/island-from-boat.png";
 import fisher from "../assets/fisher.png";
 import banana from "../assets/banana-making.png";
+import school from "../assets/school.jpeg";
+import pickUp from "../assets/pick-up.jpeg";
 
 export interface ItineraryItem {
   step: number;
@@ -22,7 +24,7 @@ export const itineraryItems: ItineraryItem[] = [
     title: "Pick-up & Departure",
     description: "Your journey begins with a pick-up from Musanze or meet at the designated location. We'll ensure you're comfortable before heading to the lake.",
     duration: "30 minutes",
-    image: boat,
+    image: pickUp,
     imageAlt: "Tour boat"
   },
   {
@@ -38,7 +40,7 @@ export const itineraryItems: ItineraryItem[] = [
     title: "Mountain Hike",
     description: "Upon arrival, we'll embark on a short hike up the mountain. The trail offers panoramic views of both lakes and the surrounding landscape – perfect for photos!",
     duration: "45 minutes",
-    image: hiking,
+    image: islandWalk,
     imageAlt: "Hiking on Batutsi Island"
   },
   {
@@ -62,7 +64,7 @@ export const itineraryItems: ItineraryItem[] = [
     title: "Community Tour",
     description: "Visit the island's church and school to learn about community life. Interact with locals and gain insights into their daily routines and traditions.",
     duration: "30 minutes",
-    image: islandWalk,
+    image: school,
     imageAlt: "Island community tour"
   },
   {
