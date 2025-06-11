@@ -10,6 +10,8 @@ interface Props {
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+// Destructure component props for use in the markup
+const { title, description, image } = Astro.props as Props;
 ---
 
 <!-- Global Metadata -->
