@@ -1,0 +1,55 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_TITLE } from "../consts";
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={`About – ${SITE_TITLE}`} description="Learn more about the qualifications and experience of Dr Neeraj Purohit, consultant MSK radiologist." />
+	</head>
+	<body class="bg-slate-50 font-sans text-slate-800 antialiased">
+		<header class="top-0 z-50 sticky bg-white/80 backdrop-blur-md border-slate-200 border-b">
+			<div class="flex justify-between items-center mx-auto px-4 py-4 max-w-6xl">
+				<a href="/" class="font-semibold text-xl">Dr&nbsp;Neeraj&nbsp;Purohit</a>
+				<nav class="space-x-6 text-sm uppercase tracking-wide">
+					<a href="/" class="hover:text-emerald-600">Home</a>
+					<a href="/about" class="font-semibold hover:text-emerald-600">About</a>
+					<a href="/info" class="hover:text-emerald-600">Info</a>
+				</nav>
+			</div>
+		</header>
+
+		<main class="space-y-14 mx-auto px-4 py-16 max-w-5xl">
+			<section>
+				<h1 class="mb-6 font-bold text-emerald-700 text-4xl">About&nbsp;Dr&nbsp;Neeraj&nbsp;Purohit</h1>
+				<p class="mb-4 text-lg leading-relaxed">Dr&nbsp;Purohit graduated with honours from Imperial College London and completed specialist radiology training at St Mary's Hospital, followed by a prestigious Musculoskeletal Imaging Fellowship at the Royal National Orthopaedic Hospital.</p>
+				<p class="mb-4 text-lg leading-relaxed">He has held substantive consultant posts within the NHS and now practices <strong>100% privately</strong> at leading centres including The Harley Street Clinic and Wellington Hospital.</p>
+				<p class="text-lg leading-relaxed">In addition to clinical work, Dr&nbsp;Purohit is an invited lecturer for the Royal College of Radiologists, regularly publishes in peer-reviewed journals and acts as imaging advisor to elite sports teams.</p>
+			</section>
+
+			<section>
+				<h2 class="mb-4 font-semibold text-emerald-700 text-3xl">Qualifications &amp; Memberships</h2>
+				<ul class="space-y-2 pl-6 text-lg list-disc">
+					<li>MBBS (Hons) – Imperial College London</li>
+					<li>FRCR – Fellow of the Royal College of Radiologists</li>
+					<li>ESSR – European Society of Musculoskeletal Radiology</li>
+					<li>BSSR – British Society of Skeletal Radiologists</li>
+				</ul>
+			</section>
+
+			<section>
+				<h2 class="mb-4 font-semibold text-emerald-700 text-3xl">Philosophy of Care</h2>
+				<p class="text-lg leading-relaxed">“I believe in clear communication, rapid diagnosis and minimally-invasive treatments that allow patients to return to full function sooner. Every scan and procedure is tailored to the individual's clinical question.”</p>
+			</section>
+
+			<section>
+				<h2 class="mb-4 font-semibold text-emerald-700 text-3xl">Research &amp; Teaching</h2>
+				<p class="text-lg leading-relaxed">Dr&nbsp;Purohit's research interests include novel injectable therapies for osteoarthritis and tendon pathology. He is a course faculty member for the RCR MSK ultrasound workshops and supervises radiology trainees on fellowship programmes.</p>
+			</section>
+		</main>
+
+		<Footer />
+	</body>
+</html>

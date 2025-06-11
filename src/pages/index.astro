@@ -2,15 +2,6 @@
 import BaseHead from "../components/BaseHead.astro";
 import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
-import { Image } from "astro:assets";
-import adiTouring from "../assets/adi-touring.png";
-import hiking from "../assets/hiking.png";
-import adi from "../assets/adi-2.png";
-import boat from "../assets/boat.png";
-import { itineraryItems } from "../content/itinerary";
-import location from "../assets/location.png";
-import banana from "../assets/banana-making.png";
-import food from "../assets/local-food.png";
 ---
 
 <!doctype html>
@@ -77,540 +68,129 @@ import food from "../assets/local-food.png";
 			}
 		</style>
 	</head>
-		<body class="relative mx-auto mt-0 md:px-8 overflow-x-hidden">
-	<!-- Rich background with decorative elements -->
-				<div class="z-0 absolute inset-0 bg-gradient-to-br from-amber-100/80 via-sky-50 to-amber-50"></div>
+	<body class="bg-slate-50 font-sans text-slate-800 antialiased">
+		<header class="top-0 z-50 sticky bg-white/80 backdrop-blur-md border-slate-200 border-b">
+			<div class="flex justify-between items-center mx-auto px-4 py-4 max-w-6xl">
+				<h1 class="font-semibold text-xl"><a href="/">Dr&nbsp;Neeraj&nbsp;Purohit</a></h1>
+				<nav class="space-x-6 text-sm uppercase tracking-wide">
+					<a href="#about" class="hover:text-emerald-600">About</a>
+					<a href="#services" class="hover:text-emerald-600">Services</a>
+					<a href="#booking" class="hover:text-emerald-600">Book</a>
+					<a href="#contact" class="hover:text-emerald-600">Contact</a>
+				</nav>
+			</div>
+		</header>
 
-		<!-- <Header /> -->
-		<main class="relative space-y-16 mx-auto mt-0 px-4 md:px-8 max-w-[1000px] overflow-hidden">
-			<!-- Hero Section - Minimal design inspired by Triply -->
-							
-				<div class="z-10 relative mx-auto mt-16 md:mt-24 container">
-					<div class="flex md:flex-row flex-col items-center gap-12">
-						<!-- Left side content area -->
-						<div class="space-y-8 w-full md:w-1/3">
-							<div>
-								<p class="mb-2 font-medium text-amber-700 uppercase tracking-wider">Authentic Local Experience</p>
-								<h1 class="mb-4 font-bold text-gray-700 text-3xl leading-[1]">
-									Twin Lakes<br>Tours Rwanda
-								</h1>
-							</div>
-							
-						<div class="md:hidden block shadow-xl rounded-xl overflow-hidden rotate-1 hover:rotate-0 transition-transform duration-300 transform">
-									<Image
-										src={location}
-										alt="Twin Lakes in Rwanda"
-										class="w-full h-auto object-cover"
-										width={800}
-										height={600}
-										style="aspect-ratio: 4/3;"
-										loading="eager"
-										decoding="async"
-										format="avif"
-										quality={80}
-									/>
-								</div>
-								<p class="max-w-md text-gray-700 text-lg">Discover the hidden beauty of Rwanda's twin lakes with our local guided tours.</p>
-							
-							<!-- Book Tour Button -->
-							<a
-								href="https://wa.me/250726606622?text=Hello%20Abiathar,%20I'm%20interested%20in%20booking%20a%20Twin%20Lakes%20Island%20Tour.%20Please%20provide%20more%20information."
-								target="_blank"
-								class="whatsapp-button"
-							>
-								<svg
-									xmlns="http://www.w3.org/2000/svg"
-									class="w-5 h-5"
-									viewBox="0 0 24 24"
-									fill="currentColor"
-								>
-									<path
-										d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
-									></path>
-								</svg>
-								<span>Book Your Tour Now</span>
-							</a>
-						</div>
-						
-						<!-- Right side image -->
-						<div class="w-full md:w-2/3">
-							<div class="relative">
-								<!-- Main image with frame effect -->
-								<div class="hidden md:block shadow-xl rounded-xl overflow-hidden rotate-1 hover:rotate-0 transition-transform duration-300 transform">
-									<Image
-										src={location}
-										alt="Twin Lakes in Rwanda"
-										class="w-full h-auto object-cover"
-										width={800}
-										height={600}
-										style="aspect-ratio: 4/3;"
-										loading="eager"
-										decoding="async"
-										format="avif"
-										quality={80}
-									/>
-								</div>
-								
-							
-							</div>
-						</div>
-					</div>
+		<main class="mx-auto px-4 max-w-6xl">
+			<!-- Hero -->
+			<section class="pt-20 pb-24 text-center" id="hero">
+				<h2 class="font-bold text-emerald-700 text-4xl md:text-5xl leading-tight">Consultant&nbsp;Musculoskeletal Radiologist</h2>
+				<p class="mx-auto mt-4 max-w-2xl text-lg md:text-xl">Advanced private imaging and image-guided injections for prompt, evidence-based relief of bone, joint and soft-tissue pain.</p>
+				<div class="flex sm:flex-row flex-col justify-center gap-4 mt-8">
+					<a href="#booking" class="bg-emerald-600 hover:bg-emerald-700 shadow px-6 py-3 rounded-full font-medium text-white">Book Appointment</a>
+					<a href="#contact" class="hover:bg-emerald-50 px-6 py-3 border border-emerald-600 rounded-full font-medium text-emerald-700">Refer a Patient</a>
 				</div>
-					<!-- Search/Info points under the title -->
-							<div class="flex md:flex-row flex-col items-start gap-6 md:gap-2 bg-white/50 shadow-lg backdrop-blur-md mt-6 p-4 border border-amber-200 rounded-xl">
-								<div class="flex md:flex-col flex-1 items-center md:items-start gap-4 w-full md:w-auto">
-									<div class="bg-amber-200 shadow-inner p-3 rounded-full text-amber-700">
-										<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 20 20" fill="currentColor">
-											<path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
-										</svg>
-									</div>
-									<div>
-										<p class="font-medium text-gray-800">Twin Lakes, Northern Rwanda</p>
-										<p class="text-gray-600 text-sm">Lake Burera & Lake Ruhondo</p>
-									</div>
-								</div>
-								
-								<div class="flex md:flex-col flex-1 items-center md:items-start gap-4 w-full md:w-auto">
-									<div class="bg-blue-200 shadow-inner p-3 rounded-full text-blue-700">
-										<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 20 20" fill="currentColor">
-											<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd" />
-										</svg>
-									</div>
-									<div>
-										<p class="font-medium text-gray-800">4 Hour Experience</p>
-										<p class="text-gray-600 text-sm">Boat tour, hiking & local culture</p>
-									</div>
-								</div>
-								
-								<div class="flex md:flex-col flex-1 items-center md:items-start gap-4 w-full md:w-auto">
-									<div class="bg-emerald-100 p-3 rounded-full text-emerald-600">
-										<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 20 20" fill="currentColor">
-											<path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z" />
-										</svg>
-									</div>
-									<div>
-										<p class="font-medium text-gray-800">Local Guide: Abiathar</p>
-										<p class="text-gray-500 text-sm">Born and raised in the region</p>
-									</div>
-								</div>
-							</div>
 			</section>
 
-			<!-- Tour Highlights Section - With ID for scroll target -->
-			<section id="tour-highlights" class="mt-16 pt-8">
-				<h2 class="mb-8 text-3xl section-title">Tour Highlights</h2>
+			<!-- About Summary -->
+			<section id="about" class="py-16 border-slate-200 border-t">
+				<h3 class="mb-6 font-semibold text-emerald-700 text-3xl text-center">About&nbsp;Dr&nbsp;Purohit</h3>
+				<p class="mx-auto mb-4 max-w-3xl text-lg leading-relaxed">Dr&nbsp;Neeraj&nbsp;Purohit MBBS&nbsp;FRCR is a fellowship-trained Consultant Musculoskeletal Radiologist practising exclusively in the private sector across leading London hospitals. He reports over 6,000 MSK MRI and ultrasound examinations annually and performs more than 1,000 image-guided procedures.</p>
+				<p class="mx-auto max-w-3xl text-lg leading-relaxed">His sub-speciality interests include sports imaging, spine pathology and novel orthobiologic injections such as Platelet-Rich Plasma (PRP) and&nbsp;Arthrosamid&reg; for osteoarthritis. Dr&nbsp;Purohit is a member of the Royal College of Radiologists (RCR) and the European Society of Musculoskeletal Radiology (ESSR).</p>
+			</section>
 
-				<div class="gap-12 grid grid-cols-1 md:grid-cols-2">
-					<!-- Scenic Boat Ride - No box, just image and text -->
-					<div class="group">
-						<div class="mb-4 rounded-lg overflow-hidden">
-							<Image
-								src={boat}
-								alt="Boat Tour on Twin Lakes"
-								class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
-							/>
-						</div>
-						<h3 class="mb-2 font-semibold text-xl text-[var(--accent-dark)]">
-							Scenic Lake Journey
-						</h3>
-						<p class="text-gray-700">
-							Cruise across serene waters to reach our small,
-							authentic island home. Experience the serenity
-							of Twin Lakes from a local's perspective.
-						</p>
+			<!-- Services / Conditions -->
+			<section id="services" class="py-16 border-slate-200 border-t">
+				<h3 class="mb-10 font-semibold text-emerald-700 text-3xl text-center">Services&nbsp;&amp;&nbsp;Procedures</h3>
+				<div class="gap-8 grid sm:grid-cols-2 lg:grid-cols-3">
+					<div class="bg-white shadow-sm p-6 border border-slate-100 rounded-lg">
+						<h4 class="mb-2 font-semibold text-xl">MRI</h4>
+						<p class="text-sm">High-resolution 1.5 T and 3 T MRI for soft-tissue injury, cartilage assessment and spine pathology with <span class="font-medium">24&nbsp;h</span> report turnaround.</p>
 					</div>
-
-					<!-- Mountain Hike - No box, just image and text -->
-					<div class="group">
-						<div class="mb-4 rounded-lg overflow-hidden">
-							<Image
-								src={hiking}
-								alt="Hiking on Batutsi Island"
-								class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
-								width={600}
-								height={400}
-								loading="lazy"
-								decoding="async"
-								format="avif"
-								quality={80}
-							/>
-						</div>
-						<h3 class="mb-2 font-semibold text-xl text-[var(--accent-dark)]">
-							Island Mountain Hike
-						</h3>
-						<p class="text-gray-700">
-							Take a guided walk to panoramic viewpoints
-							overlooking both lakes, with stories of island
-							life shared by your local guide.
-						</p>
+					<div class="bg-white shadow-sm p-6 border border-slate-100 rounded-lg">
+						<h4 class="mb-2 font-semibold text-xl">Ultrasound&nbsp;&amp; Injections</h4>
+						<p class="text-sm">Dynamic tendon and joint ultrasound plus ultrasound-guided corticosteroid, hyaluronic acid, PRP and <span class="whitespace-nowrap">Arthrosamid&reg;</span> injections.</p>
 					</div>
-
-					<!-- Traditional Food - No box, just image and text -->
-					<div class="group">
-						<div class="bg-emerald-50/50 mb-4 rounded-lg overflow-hidden">
-							<div class="mb-4 rounded-lg overflow-hidden">
-							<Image
-								src={food}
-								alt="Hiking on Batutsi Island"
-								class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
-							/>
-						</div>
-						</div>
-						<h3 class="mb-2 font-semibold text-xl text-[var(--accent-dark)]">
-							Family & Food Experience
-						</h3>
-						<p class="text-gray-700">
-							Meet Abiathar's family and taste authentic local
-							dishes prepared by island residents. Experience
-							true Rwandan hospitality in our family home.
-						</p>
+					<div class="bg-white shadow-sm p-6 border border-slate-100 rounded-lg">
+						<h4 class="mb-2 font-semibold text-xl">CT&nbsp;&amp; X-ray</h4>
+						<p class="text-sm">Low-dose CT for bone detail and weight-bearing radiographs for alignment and arthritis evaluation.</p>
 					</div>
-
-					<!-- Banana Beer Making - No box, just image and text -->
-					<div class="group">
-						<div class="bg-emerald-50/50 mb-4 rounded-lg overflow-hidden">
-							<div class="mb-4 rounded-lg overflow-hidden">
-							<Image
-								src={banana}
-								alt="Hiking on Batutsi Island"
-								class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
-							/>
-						</div>
-						</div>
-						<h3 class="mb-2 font-semibold text-xl text-[var(--accent-dark)]">
-							Traditional Brewing
-						</h3>
-						<p class="text-gray-700">
-							Discover the ancient art of banana beer making,
-							a tradition passed down through generations on
-							our small island community.
-						</p>
+					<div class="bg-white shadow-sm p-6 border border-slate-100 rounded-lg">
+						<h4 class="mb-2 font-semibold text-xl">Image-Guided Spine Procedures</h4>
+						<p class="text-sm">CT or fluoroscopy-guided facet, nerve-root and caudal epidural steroid injections.</p>
+					</div>
+					<div class="bg-white shadow-sm p-6 border border-slate-100 rounded-lg">
+						<h4 class="mb-2 font-semibold text-xl">Second Opinion</h4>
+						<p class="text-sm">Independent review of external imaging with a detailed clinical report for complex cases.</p>
+					</div>
+					<div class="bg-white shadow-sm p-6 border border-slate-100 rounded-lg">
+						<h4 class="mb-2 font-semibold text-xl">Rapid Access</h4>
+						<p class="text-sm">Same-day imaging slots and <span class="font-medium">secure&nbsp;online</span> report delivery to patients and referrers.</p>
 					</div>
 				</div>
 			</section>
 
-			<!-- Introduction Section - More organic layout -->
-			<section class="mt-16">
-				<h2 class="mb-8 text-3xl section-title">Your Local Guide</h2>
-
-				<div class="flex md:flex-row flex-col items-center gap-10">
-					<div class="mt-8 md:mt-0 w-full md:w-1/3">
-						<div
-							class="shadow-lg mx-auto border-[var(--accent)] border-4 rounded-full w-48 h-48 overflow-hidden"
-						>
-							<Image
-								src={adi}
-								alt="Abiathar Ihimbazwe - Tour Guide"
-								class="w-full h-full object-cover"
-							/>
-						</div>
-					</div>
-					<div class="w-full md:w-2/3">
-						<div class="mb-4 guide-info">
-							<h3
-								class="font-semibold text-2xl text-[var(--accent-dark)]"
-							>
-								Abiathar Ihimbazwe
-							</h3>
-							<p class="text-[var(--tertiary)] text-lg">
-								Native Islander & Cultural Expert
-							</p>
-						</div>
-
-						<p class="mb-4 text-gray-700">
-							Born and raised on Batutsi Island, Abiathar knows
-							all 70 families (about 200 people) who call this
-							island home. This intimate community offers an
-							authentic glimpse into traditional Rwandan island
-							life.
-						</p>
-						<p class="text-gray-700">
-							With family still on the island, Abiathar provides a
-							genuine local perspective you won't find in typical
-							tourist experiences.
-						</p>
-					</div>
+			<!-- Testimonials -->
+			<section id="testimonials" class="bg-emerald-50/30 py-16 border-slate-200 border-t">
+				<h3 class="mb-10 font-semibold text-emerald-700 text-3xl text-center">Patient&nbsp;Testimonials</h3>
+				<div class="gap-8 grid md:grid-cols-3 mx-auto max-w-5xl">
+					<blockquote class="bg-white shadow-sm p-6 border-emerald-600 border-l-4 rounded-lg">
+						<p class="italic">“Dr&nbsp;Purohit quickly diagnosed my rotator-cuff tear and performed a PRP injection the same week. Six weeks later I'm back on the tennis court pain-free.”</p>
+						<footer class="mt-4 font-semibold text-sm">—&nbsp;J&nbsp;D, Patient</footer>
+					</blockquote>
+					<blockquote class="bg-white shadow-sm p-6 border-emerald-600 border-l-4 rounded-lg">
+						<p class="italic">“As a physiotherapist I value Dr&nbsp;Purohit's thorough MRI reports and fast turnaround. My patients receive clear guidance and recover sooner.”</p>
+						<footer class="mt-4 font-semibold text-sm">—&nbsp;S&nbsp;K, Physiotherapist</footer>
+					</blockquote>
+					<blockquote class="bg-white shadow-sm p-6 border-emerald-600 border-l-4 rounded-lg">
+						<p class="italic">“The Arthrosamid injection has transformed my knee arthritis. Professional, caring and virtually painless procedure.”</p>
+						<footer class="mt-4 font-semibold text-sm">—&nbsp;L&nbsp;M, Patient</footer>
+					</blockquote>
 				</div>
 			</section>
 
-			<!-- Location Section - More integrated design -->
-			<section class="mt-16">
-				<h2 class="mb-8 text-3xl section-title">Location</h2>
-
-				<div class="mb-8 w-full">
-					<p class="text-gray-700 text-lg">
-						Batutsi Island is located in the stunning Twin Lakes
-						region (Lake Burera and Lake Ruhondo) near Ruhengeri,
-						Rwanda. The island offers breathtaking views of the
-						surrounding volcanic mountains.
-					</p>
-				</div>
-
-				<div class="gap-8 grid grid-cols-1 lg:grid-cols-[1fr,2fr]">
-					<div class="flex flex-col gap-6">
-						<div class="bg-emerald-50/50 p-4 md:p-6 border-[var(--accent)] rounded-lg">
-							<div class="flex items-center gap-3 mb-3">
-								<div
-									class="flex justify-center items-center bg-[var(--accent)] rounded-full w-8 h-8 text-white"
-								>
-									<svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor">
-										<path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
-									</svg>
-								</div>
-								<h3 class="font-semibold text-lg">
-									Meeting Point
-								</h3>
-							</div>
-							<p class="text-gray-700">
-								This is where you'll meet your guide before
-								heading to the boat. Easy to find and accessible
-								from Musanze.
-							</p>
-							<a
-								href="https://maps.app.goo.gl/CNGRbBC524Lu6539A"
-								target="_blank"
-								class="inline-flex items-center gap-2 mt-3 text-gray-800 hover:text-emerald-700 transition"
-							>
-								<svg
-									xmlns="http://www.w3.org/2000/svg"
-									class="w-6 h-6"
-									viewBox="0 0 20 20"
-									fill="currentColor"
-								>
-									<path
-										fill-rule="evenodd"
-										d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
-										clip-rule="evenodd"></path>
-								</svg>
-								<span>Meeting Point Location</span>
-							</a>
-						</div>
-
-						<div class="bg-emerald-50/50 p-4 md:p-6 border-[var(--tertiary)] rounded-lg">
-							<div class="flex items-center gap-3 mb-3">
-								<div
-									class="flex justify-center items-center bg-[var(--tertiary)] rounded-full w-8 h-8 text-white"
-								>
-									<svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor">
-										<path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
-									</svg>
-								</div>
-								<h3 class="font-semibold text-lg">
-									Twin Lakes Tours
-								</h3>
-							</div>
-							<p class="text-gray-700">
-								See photos, reviews and more details on our
-								Google Business profile
-							</p>
-							<a
-								href="https://maps.app.goo.gl/vY327YNLADa6gDds9"
-								target="_blank"
-								class="inline-flex items-center gap-2 mt-3 text-[var(--tertiary)] hover:text-[var(--primary)] transition"
-							>
-								<svg
-									xmlns="http://www.w3.org/2000/svg"
-									class="w-6 h-6"
-									viewBox="0 0 20 20"
-									fill="currentColor"
-								>
-									<path
-										d="M4 4a2 2 0 012-2h8a2 2 0 012 2v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4zm3 1h6v4H7V5zm8 8v2h1v-2h-1zm-2-2H7v4h6v-4zm2 0h1v2h-1v-2zm1-2V7h-1v2h1zM5 7v2h1V7H5zm0 4h1v2H5v-2zm0 4h1v2H5v-2z"
-									></path>
-								</svg>
-								<span>Twin Lakes Tours Rwanda</span>
-							</a>
-						</div>
+			<!-- Booking Form -->
+			<section id="booking" class="py-16 border-slate-200 border-t">
+				<h3 class="mb-6 font-semibold text-emerald-700 text-3xl text-center">Book&nbsp;an&nbsp;Appointment</h3>
+				<form action="https://formspree.io/f/your-endpoint" method="POST" class="space-y-4 bg-white shadow mx-auto p-8 rounded-lg max-w-xl">
+					<div>
+						<label for="name" class="block mb-1 font-medium text-sm">Full&nbsp;Name</label>
+						<input type="text" id="name" name="name" required class="px-3 py-2 border border-slate-300 rounded focus:outline-none focus:ring-2 focus:ring-emerald-500 w-full" />
 					</div>
+					<div>
+						<label for="email" class="block mb-1 font-medium text-sm">Email&nbsp;Address</label>
+						<input type="email" id="email" name="email" required class="px-3 py-2 border border-slate-300 rounded focus:outline-none focus:ring-2 focus:ring-emerald-500 w-full" />
+					</div>
+					<div>
+						<label for="phone" class="block mb-1 font-medium text-sm">Phone&nbsp;Number</label>
+						<input type="tel" id="phone" name="phone" class="px-3 py-2 border border-slate-300 rounded focus:outline-none focus:ring-2 focus:ring-emerald-500 w-full" />
+					</div>
+					<div>
+						<label for="message" class="block mb-1 font-medium text-sm">Brief&nbsp;Message</label>
+						<textarea id="message" name="message" rows="4" class="px-3 py-2 border border-slate-300 rounded focus:outline-none focus:ring-2 focus:ring-emerald-500 w-full"></textarea>
+					</div>
+					<button type="submit" class="bg-emerald-600 hover:bg-emerald-700 py-3 rounded w-full font-medium text-white">Send Request</button>
+				</form>
+				<p class="mt-4 text-slate-600 text-xs text-center">* We aim to respond within 24&nbsp;hours. This form is powered by Formspree and sent securely over HTTPS.</p>
+			</section>
 
-					<div class="rounded-lg h-[500px] overflow-hidden">
-						<iframe
-							src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15949.777929693358!2d29.75749315!3d-1.4734698!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19dc5db0369e3173%3A0xeecb4143e7ce5935!2sTwin%20Lakes%20Tours%20Rwanda!5e0!3m2!1sen!2sus!4v1718559321123!5m2!1sen!2sus"
-							width="100%"
-							height="100%"
-							style="border:0;"
-							allowfullscreen=""
-							loading="lazy"
-							referrerpolicy="no-referrer-when-downgrade"
-							title="Twin Lakes Rwanda Map"
-							class="w-full h-full"></iframe>
+			<!-- Contact & Location -->
+			<section id="contact" class="py-16 border-slate-200 border-t">
+				<h3 class="mb-6 font-semibold text-emerald-700 text-3xl text-center">Contact&nbsp;Details</h3>
+				<div class="gap-8 grid md:grid-cols-2 mx-auto max-w-3xl">
+					<div>
+						<h4 class="mb-2 font-medium text-lg">Clinic&nbsp;Coordinator</h4>
+						<p class="mb-2">Phone: <a href="tel:+442012345678" class="text-emerald-700 hover:underline">+44&nbsp;(0)20&nbsp;1234&nbsp;5678</a></p>
+						<p class="mb-2">Email: <a href="mailto:appointments@drpurohit.com" class="text-emerald-700 hover:underline">appointments@drpurohit.com</a></p>
+						<p class="mb-2">Address: <span class="block">Harley&nbsp;Street Diagnostic Centre<br/>London&nbsp;W1</span></p>
+					</div>
+					<div>
+						<iframe class="border rounded-lg w-full h-64" loading="lazy" allowfullscreen src="https://www.google.com/maps?q=harley%20street%20london&output=embed"></iframe>
 					</div>
 				</div>
 			</section>
-
-			<!-- Tour Itinerary Section - Timeline style without white boxes -->
-			<section class="mt-16">
-				<h2 class="mb-8 text-3xl section-title">Tour Itinerary</h2>
-				
-				<!-- Timeline container -->
-				<div class="relative">
-					<!-- Vertical timeline line -->
-					<div class="top-0 bottom-0 left-8 absolute bg-gradient-to-b from-emerald-500 to-emerald-700 rounded-full w-0.5"></div>
-					
-					{
-						itineraryItems.map((item) => (
-							<div class="relative mb-12 pl-16">
-								<!-- Timeline marker with number -->
-								<div class="top-8 left-8 z-10 absolute flex justify-center items-center bg-emerald-100 shadow-md -ml-4 border-2 border-emerald-600 rounded-full w-8 h-8">
-									<span class="font-bold text-emerald-800">{item.step}</span>
-								</div>
-								
-								<div class="md:p-4 pl-2 border-emerald-500/30 rounded-lg">
-									<div class="flex md:flex-row flex-col gap-6">
-										<div class="w-full md:w-1/2">
-											{item.image ? (
-												<div
-													class="rounded-lg overflow-hidden"
-													style="aspect-ratio: 5/3;"
-												>
-													<Image
-														src={item.image}
-														alt={item.imageAlt}
-														class="w-full h-full object-cover"
-													/>
-												</div>
-											) : (
-												<div class="flex justify-center items-center bg-emerald-50 rounded-lg h-full">
-													<svg
-														xmlns="http://www.w3.org/2000/svg"
-														class="w-16 h-16 text-emerald-300"
-														fill="none"
-														viewBox="0 0 24 24"
-														stroke="currentColor"
-													>
-														<path
-															stroke-linecap="round"
-															stroke-linejoin="round"
-															stroke-width="1"
-															d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"
-														/>
-													</svg>
-												</div>
-											)}
-										</div>
-
-										<div class="w-full md:w-1/2">
-											<div class="md:flex flex-col justify-between items-start mt-2 md:mt-0 mb-4">
-												<div>
-													<h3 class="font-semibold text-xl text-[var(--accent-dark)]">
-														{item.title}
-													</h3>
-												</div>
-												<span class="bg-emerald-100 px-3 py-1 pt-2 md:pt-0 rounded-full font-medium text-emerald-800 text-sm">
-													{item.duration}
-												</span>
-											</div>
-
-											<p class="text-gray-700">
-												{item.description}
-												
-											</p>
-										</div>
-									</div>
-								</div>
-							</div>
-						))
-					}
-				</div>
-				
-				<div class="bg-emerald-50/50 mt-8 p-6 border-emerald-500 rounded-lg">
-					<div class="flex items-center mb-2">
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							class="mr-2 w-5 h-5 text-emerald-600"
-							fill="none"
-							viewBox="0 0 24 24"
-							stroke="currentColor"
-						>
-							<path
-								stroke-linecap="round"
-								stroke-linejoin="round"
-								stroke-width="2"
-								d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-							></path>
-						</svg>
-						<span class="font-medium text-emerald-800">Tour Start Times:</span>
-					</div>
-					<p class="ml-7 text-gray-700">
-						8:00 AM - 12:00 PM (Choose your preferred time when booking)
-					</p>
-					<div class="flex items-center mt-3 mb-2">
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							class="mr-2 w-5 h-5 text-emerald-600"
-							fill="none"
-							viewBox="0 0 24 24"
-							stroke="currentColor"
-						>
-							<path
-								stroke-linecap="round"
-								stroke-linejoin="round"
-								stroke-width="2"
-								d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-							></path>
-						</svg>
-						<span class="font-medium text-emerald-800">Personalized Experience:</span>
-					</div>
-					<p class="ml-7 text-gray-700">
-						Abiathar works closely with each group to ensure a flexible
-						and personalized experience.
-					</p>
-				</div>
-			</section>
-
-			<!-- Booking Section - More integrated design -->
-			<section class="mt-16">
-				<h2 class="mb-8 text-3xl section-title">Book Your Tour</h2>
-
-				<div class="flex md:flex-row flex-col items-center gap-10">
-					<div class="rounded-lg w-full md:w-1/2 overflow-hidden">
-						<Image
-							src={adiTouring}
-							alt="Abiathar guiding tourists"
-							class="w-full h-auto object-cover"
-							width={500}
-							height={300}
-							style="aspect-ratio: 5/3;"
-						/>
-					</div>
-
-					<div class="space-y-6 w-full md:w-1/2">
-						<p class="text-gray-700 text-lg">
-							Ready to experience the beauty and culture of
-							Batutsi Island? Contact Abiathar directly via
-							WhatsApp to arrange your tour.
-						</p>
-						<a
-							href="https://wa.me/250726606622?text=Hello%20Abiathar,%20I'm%20interested%20in%20booking%20a%20Twin%20Lakes%20Island%20Tour.%20Please%20provide%20more%20information."
-							target="_blank"
-							class="inline-block whatsapp-button"
-						>
-							<svg
-								xmlns="http://www.w3.org/2000/svg"
-								class="w-6 h-6"
-								viewBox="0 0 24 24"
-								fill="currentColor"
-							>
-								<path
-									d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
-								></path>
-							</svg>
-							<span>Book via WhatsApp</span>
-						</a>
-						<p class="mt-2 text-gray-600 text-sm">
-							Or follow us on
-							<a
-								href="https://www.instagram.com/p/CzArdQ0NJ9I"
-								target="_blank"
-								class="text-pink-600 hover:underline"
-								>Instagram</a
-							>
-						</p>
-					</div>
-				</div>
-			</section>
-
-			<Footer />
 		</main>
+
+		<Footer />
 	</body>
 </html>

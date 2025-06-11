@@ -1,0 +1,119 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_TITLE } from "../consts";
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={`Information – ${SITE_TITLE}`} description="Resources for patients and clinicians, pricing, and detailed service information." />
+	</head>
+	<body class="bg-slate-50 font-sans text-slate-800 antialiased">
+		<header class="top-0 z-50 sticky bg-white/80 backdrop-blur-md border-slate-200 border-b">
+			<div class="flex justify-between items-center mx-auto px-4 py-4 max-w-6xl">
+				<a href="/" class="font-semibold text-xl">Dr&nbsp;Neeraj&nbsp;Purohit</a>
+				<nav class="space-x-6 text-sm uppercase tracking-wide">
+					<a href="/" class="hover:text-emerald-600">Home</a>
+					<a href="/about" class="hover:text-emerald-600">About</a>
+					<a href="/info" class="font-semibold hover:text-emerald-600">Info</a>
+				</nav>
+			</div>
+		</header>
+
+		<main class="space-y-20 mx-auto px-4 py-16 max-w-6xl">
+			<!-- Patients Section -->
+			<section id="patients">
+				<h2 class="mb-6 font-semibold text-emerald-700 text-3xl">For&nbsp;Patients</h2>
+				<ol class="space-y-4 pl-6 text-lg leading-relaxed list-decimal">
+					<li>
+						<strong>Choose Your Service:</strong> MRI, Ultrasound, CT/X-ray or Image-guided Injection. Unsure? <a href="#contact" class="text-emerald-700 underline">Contact us</a> for advice.
+					</li>
+					<li>
+						<strong>Request a Booking:</strong> Use the <a href="/#booking" class="text-emerald-700 underline">online form</a> or call the clinic coordinator. Same-day slots often available.
+					</li>
+					<li>
+						<strong>Attend the Scan / Procedure:</strong> Arrive 15&nbsp;min early. Most scans take 20-30&nbsp;min. Injections are usually complete within 15&nbsp;min.
+					</li>
+					<li>
+						<strong>Receive Your Report:</strong> Secure web link emailed within 24&nbsp;h (MRI/CT) or immediately post-procedure (ultrasound).
+					</li>
+				</ol>
+			</section>
+
+			<!-- Clinicians Section -->
+			<section id="clinicians">
+				<h2 class="mb-6 font-semibold text-emerald-700 text-3xl">For&nbsp;Referrers&nbsp;/&nbsp;Clinicians</h2>
+				<p class="mb-4 text-lg leading-relaxed">Rapid access imaging supports timely decision-making. Refer via secure email <a href="mailto:referrals@drpurohit.com" class="text-emerald-700 underline">referrals@drpurohit.com</a> or complete the <a href="https://www.mskscan.com" class="text-emerald-700 underline" target="_blank" rel="noopener">MSK&nbsp;Scan online form</a>.</p>
+				<ul class="space-y-2 pl-6 text-lg list-disc">
+					<li>Reports contain structured findings &amp; management recommendations.</li>
+					<li>Dicom image transfer available via secure PACS link.</li>
+					<li>Same-day phone discussion slots for complex cases.</li>
+				</ul>
+			</section>
+
+			<!-- Conditions & Services Section -->
+			<section id="conditions">
+				<h2 class="mb-6 font-semibold text-emerald-700 text-3xl">Conditions&nbsp;&amp;&nbsp;Clinical&nbsp;Indications</h2>
+				<div class="gap-8 grid sm:grid-cols-2">
+					<div>
+						<h3 class="mb-2 font-medium text-xl">Orthobiologic Injections</h3>
+						<p>Platelet-Rich Plasma (PRP) for tendinopathy and <span class="whitespace-nowrap">Arthrosamid&reg;</span> for knee osteoarthritis.</p>
+					</div>
+					<div>
+						<h3 class="mb-2 font-medium text-xl">Sports Injuries</h3>
+						<p>Stress fractures, muscle tears and ligament sprains in elite and recreational athletes.</p>
+					</div>
+					<div>
+						<h3 class="mb-2 font-medium text-xl">Spine Pain</h3>
+						<p>Disc protrusion, facet degeneration and neural impingement evaluated with MRI and treated with targeted injections.</p>
+					</div>
+					<div>
+						<h3 class="mb-2 font-medium text-xl">Arthritis Imaging</h3>
+						<p>X-ray alignment views and CT for surgical planning; hyaluronic acid and viscosupplement injections for symptom relief.</p>
+					</div>
+				</div>
+			</section>
+
+			<!-- Pricing Section -->
+			<section id="pricing">
+				<h2 class="mb-6 font-semibold text-emerald-700 text-3xl">Pricing&nbsp;&amp;&nbsp;Insurance</h2>
+				<table class="bg-white shadow-sm w-full text-left border-collapse">
+					<thead>
+						<tr class="bg-emerald-600 text-white">
+							<th class="p-3">Service</th>
+							<th class="p-3">Self-Pay&nbsp;Fee</th>
+						</tr>
+					</thead>
+					<tbody class="divide-y divide-slate-200">
+						<tr>
+							<td class="p-3">MRI single region</td>
+							<td class="p-3">£450 (includes report)</td>
+						</tr>
+						<tr>
+							<td class="p-3">Ultrasound + guided injection</td>
+							<td class="p-3">£350 – £750 (depends on injectable)</td>
+						</tr>
+						<tr>
+							<td class="p-3">CT-guided spine injection</td>
+							<td class="p-3">£1,100</td>
+						</tr>
+					</tbody>
+				</table>
+				<p class="mt-4 text-lg">Major insurers accepted: Bupa, AXA-PPP, Vitality, Aviva. Quotes for packaged imaging available on request.</p>
+			</section>
+
+			<!-- Resources Section -->
+			<section id="resources">
+				<h2 class="mb-6 font-semibold text-emerald-700 text-3xl">Patient&nbsp;Resources</h2>
+				<ul class="space-y-2 pl-6 text-lg list-disc">
+					<li><a href="https://www.britishhipsociety.com" target="_blank" class="text-emerald-700 underline" rel="noopener">British Hip Society – Patient Guides</a></li>
+					<li><a href="https://www.arthritisresearchuk.org" target="_blank" class="text-emerald-700 underline" rel="noopener">Versus Arthritis – Osteoarthritis Information</a></li>
+					<li><a href="https://www.nhs.uk/conditions/platelet-rich-plasma-prp-injections/" target="_blank" class="text-emerald-700 underline" rel="noopener">NHS – Platelet Rich Plasma overview</a></li>
+				</ul>
+			</section>
+		</main>
+
+		<Footer />
+	</body>
+</html>
