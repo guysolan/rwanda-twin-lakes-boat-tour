@@ -1,13 +1,33 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
 import Footer from "../components/Footer.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import { SITE_TITLE, SITE_DESCRIPTION, FORMSPREE_ENDPOINT } from "../consts";
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<script type="application/ld+json">{
+		  "@context": "https://schema.org",
+		  "@type": "MedicalBusiness",
+		  "name": "Dr Neeraj Purohit",
+		  "url": "https://example.com/",
+		  "image": "https://example.com/images/dr-neeraj-purohit.jpg",
+		  "medicalSpecialty": "Musculoskeletal Radiology",
+		  "description": "Private musculoskeletal imaging and image-guided injections by Dr Neeraj Purohit, London-based consultant radiologist.",
+		  "address": {
+		    "@type": "PostalAddress",
+		    "streetAddress": "Harley Street Diagnostic Centre",
+		    "addressLocality": "London",
+		    "postalCode": "W1",
+		    "addressCountry": "GB"
+		  },
+		  "telephone": "+44 20 1234 5678",
+		  "sameAs": [
+		    "https://www.linkedin.com/in/neeraj-purohit-63ba8483/"
+		  ]
+		}</script>
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
@@ -152,7 +172,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 			<!-- Booking Form -->
 			<section id="booking" class="py-16 border-slate-200 border-t">
 				<h3 class="mb-6 font-semibold text-emerald-700 text-3xl text-center">Book&nbsp;an&nbsp;Appointment</h3>
-				<form action="https://formspree.io/f/your-endpoint" method="POST" class="space-y-4 bg-white shadow mx-auto p-8 rounded-lg max-w-xl">
+				<form action={FORMSPREE_ENDPOINT} method="POST" class="space-y-4 bg-white shadow mx-auto p-8 rounded-lg max-w-xl">
 					<div>
 						<label for="name" class="block mb-1 font-medium text-sm">Full&nbsp;Name</label>
 						<input type="text" id="name" name="name" required class="px-3 py-2 border border-slate-300 rounded focus:outline-none focus:ring-2 focus:ring-emerald-500 w-full" />
