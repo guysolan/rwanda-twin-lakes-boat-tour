@@ -11,6 +11,14 @@ import { itineraryItems } from "../content/itinerary";
 import location from "../assets/location.png";
 import banana from "../assets/banana-making.png";
 import food from "../assets/local-food.png";
+
+// Featured Twin Lakes photos
+const featuredPhotos = [
+  { src: "/rwanda-tour-photos/lakes.jpeg", alt: "Beautiful Twin Lakes landscape" },
+  { src: "/rwanda-tour-photos/tour.jpeg", alt: "Tour group experience" },
+  { src: "/rwanda-tour-photos/dance.jpeg", alt: "Traditional dance performance" },
+  { src: "/rwanda-tour-photos/scenic.jpeg", alt: "Scenic Rwanda view" }
+];
 ---
 
 <!doctype html>
@@ -112,24 +120,36 @@ import food from "../assets/local-food.png";
 								</div>
 								<p class="max-w-md text-gray-700 text-lg">Discover the hidden beauty of Rwanda's twin lakes with our local guided tours.</p>
 							
-							<!-- Book Tour Button -->
-							<a
-								href="https://wa.me/250726606622?text=Hello%20Abiathar,%20I'm%20interested%20in%20booking%20a%20Twin%20Lakes%20Island%20Tour.%20Please%20provide%20more%20information."
-								target="_blank"
-								class="whatsapp-button"
-							>
-								<svg
-									xmlns="http://www.w3.org/2000/svg"
-									class="w-5 h-5"
-									viewBox="0 0 24 24"
-									fill="currentColor"
+							<!-- Tour Options -->
+							<div class="space-y-4">
+								<a
+									href="https://wa.me/250726606622?text=Hello%20Abiathar,%20I'm%20interested%20in%20booking%20a%20Twin%20Lakes%20Island%20Tour.%20Please%20provide%20more%20information."
+									target="_blank"
+									class="whatsapp-button"
 								>
-									<path
-										d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
-									></path>
-								</svg>
-								<span>Book Your Tour Now</span>
-							</a>
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										class="w-5 h-5"
+										viewBox="0 0 24 24"
+										fill="currentColor"
+									>
+										<path
+											d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+										></path>
+									</svg>
+									<span>Book Twin Lakes Tour</span>
+								</a>
+								
+								<a
+									href="/9-day-tour"
+									class="inline-flex items-center gap-2 bg-amber-600 hover:bg-amber-700 text-white px-6 py-3 rounded-2xl font-medium transition-all transform hover:-translate-y-1 shadow-lg"
+								>
+									<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
+										<path fill-rule="evenodd" d="M10 2a4 4 0 00-4 4v1H5a1 1 0 00-.994.89l-1 9A1 1 0 004 18h12a1 1 0 00.994-1.11l-1-9A1 1 0 0015 7h-1V6a4 4 0 00-4-4zM8 6a2 2 0 114 0v1H8V6zM6 9a1 1 0 012 0v1a1 1 0 11-2 0V9zm8 0a1 1 0 012 0v1a1 1 0 11-2 0V9z" clip-rule="evenodd" />
+									</svg>
+									<span>9-Day Rwanda Adventure</span>
+								</a>
+							</div>
 						</div>
 						
 						<!-- Right side image -->
@@ -196,9 +216,89 @@ import food from "../assets/local-food.png";
 							</div>
 			</section>
 
+			<!-- Tour Options Section -->
+			<section class="mt-16">
+				<h2 class="mb-8 text-3xl section-title">Choose Your Rwanda Adventure</h2>
+				
+				<div class="gap-8 grid grid-cols-1 lg:grid-cols-2">
+					<!-- Twin Lakes Tour -->
+					<div class="bg-white/70 shadow-lg backdrop-blur-sm p-6 border border-emerald-200 rounded-xl">
+						<div class="mb-4">
+							<h3 class="font-semibold text-xl text-emerald-800 mb-2">Twin Lakes Island Tour</h3>
+							<p class="text-emerald-600 font-medium">4 Hours • Cultural Experience</p>
+						</div>
+						<p class="mb-4 text-gray-700">
+							Experience authentic island life with our signature Twin Lakes tour. Visit Batutsi Island, 
+							meet local families, learn traditional brewing, and enjoy stunning lake views.
+						</p>
+						<ul class="mb-6 space-y-2 text-gray-600 text-sm">
+							<li class="flex items-center gap-2">
+								<div class="bg-emerald-400 rounded-full w-1.5 h-1.5"></div>
+								Boat ride across Twin Lakes
+							</li>
+							<li class="flex items-center gap-2">
+								<div class="bg-emerald-400 rounded-full w-1.5 h-1.5"></div>
+								Mountain hike with panoramic views
+							</li>
+							<li class="flex items-center gap-2">
+								<div class="bg-emerald-400 rounded-full w-1.5 h-1.5"></div>
+								Traditional banana beer making
+							</li>
+							<li class="flex items-center gap-2">
+								<div class="bg-emerald-400 rounded-full w-1.5 h-1.5"></div>
+								Family visit & local cuisine
+							</li>
+						</ul>
+						<a
+							href="https://wa.me/250726606622?text=Hello%20Abiathar,%20I'm%20interested%20in%20booking%20a%20Twin%20Lakes%20Island%20Tour.%20Please%20provide%20more%20information."
+							target="_blank"
+							class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-lg font-medium transition-all"
+						>
+							Book Twin Lakes Tour
+						</a>
+					</div>
+					
+					<!-- 9-Day Tour -->
+					<div class="bg-white/70 shadow-lg backdrop-blur-sm p-6 border border-amber-200 rounded-xl">
+						<div class="mb-4">
+							<h3 class="font-semibold text-xl text-amber-800 mb-2">9-Day Rwanda Adventure</h3>
+							<p class="text-amber-600 font-medium">9 Days • Complete Experience</p>
+						</div>
+						<p class="mb-4 text-gray-700">
+							The ultimate Rwanda experience covering all major national parks. From mountain gorillas 
+							to Big Five safaris, coffee plantations to canopy walks - see it all!
+						</p>
+						<ul class="mb-6 space-y-2 text-gray-600 text-sm">
+							<li class="flex items-center gap-2">
+								<div class="bg-amber-400 rounded-full w-1.5 h-1.5"></div>
+								Akagera National Park safari
+							</li>
+							<li class="flex items-center gap-2">
+								<div class="bg-amber-400 rounded-full w-1.5 h-1.5"></div>
+								Mountain gorilla trekking
+							</li>
+							<li class="flex items-center gap-2">
+								<div class="bg-amber-400 rounded-full w-1.5 h-1.5"></div>
+								Lake Kivu & coffee plantation
+							</li>
+							<li class="flex items-center gap-2">
+								<div class="bg-amber-400 rounded-full w-1.5 h-1.5"></div>
+								Nyungwe canopy walk
+							</li>
+						</ul>
+						<a
+							href="/9-day-tour"
+							class="inline-flex items-center gap-2 bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded-lg font-medium transition-all"
+						>
+							Learn More
+						</a>
+					</div>
+				</div>
+			</section>
+
 			<!-- Tour Highlights Section - With ID for scroll target -->
 			<section id="tour-highlights" class="mt-16 pt-8">
-				<h2 class="mb-8 text-3xl section-title">Tour Highlights</h2>
+				<h2 class="mb-8 text-3xl section-title">Twin Lakes Tour Highlights</h2>
 
 				<div class="gap-12 grid grid-cols-1 md:grid-cols-2">
 					<!-- Scenic Boat Ride - No box, just image and text -->
@@ -555,6 +655,37 @@ import food from "../assets/local-food.png";
 						Abiathar works closely with each group to ensure a flexible
 						and personalized experience.
 					</p>
+				</div>
+			</section>
+
+			<!-- Featured Photos Section -->
+			<section class="mt-16">
+				<h2 class="mb-8 text-3xl section-title">Experience Gallery</h2>
+				
+				<div class="gap-4 grid grid-cols-2 md:grid-cols-4 mb-8">
+					{featuredPhotos.map((photo) => (
+						<div class="group rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+							<img
+								src={photo.src}
+								alt={photo.alt}
+								class="w-full h-32 md:h-40 object-cover group-hover:scale-105 transition-transform duration-300"
+								loading="lazy"
+								onerror="this.style.display='none'"
+							/>
+						</div>
+					))}
+				</div>
+				
+				<div class="text-center">
+					<a
+						href="/9-day-tour"
+						class="inline-flex items-center gap-2 text-emerald-600 hover:text-emerald-700 font-medium transition-colors"
+					>
+						View complete gallery in 9-day tour
+						<svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor">
+							<path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+						</svg>
+					</a>
 				</div>
 			</section>
 

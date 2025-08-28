@@ -1,6 +1,4 @@
-import boat from "../assets/boat.png";
 import boatTourImage from "../assets/boat-tour.png";
-import hiking from "../assets/hiking.png";
 import adiTouring from "../assets/adi-touring.png";
 import islandWalk from "../assets/island-walk.png";
 import islandFromBoat from "../assets/island-from-boat.png";
