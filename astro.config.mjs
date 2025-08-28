@@ -1,13 +1,17 @@
+// @ts-check
 import { defineConfig, passthroughImageService } from "astro/config";
 import tailwind from "@astrojs/tailwind";
 
-const isProd = process.env.GITHUB_PAGES === "true";
+// Remove the Vercel serverless import
+// import vercel from "@astrojs/vercel/serverless";
 
 export default defineConfig({
 	integrations: [tailwind()],
-	output: "static",
-	site: isProd ? "https://guysolan.github.io" : "http://localhost:4321",
-	base: isProd ? "/rwanda-twin-lakes-boat-tour" : "/",
+	output: "static", // Change this from "server" to "static"
+	site: "https://guysolan.github.io",
+	base: "/rwanda-twin-lakes-boat-tour",
 	outDir: "./dist",
-	image: { service: passthroughImageService() },
+	image: {
+		service: passthroughImageService(),
+	},
 });

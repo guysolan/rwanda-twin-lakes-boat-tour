@@ -1,6 +1,5 @@
 ---
-import BaseHead from "../components/BaseHead.astro";
-import Footer from "../components/Footer.astro";
+import Layout from "../layouts/Layout.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import { Image } from "astro:assets";
 import adi from "../assets/adi-2.png";
@@ -8,459 +7,363 @@ import adi from "../assets/adi-2.png";
 // Featured Twin Lakes photos
 const featuredPhotos = [
 	{
-		src: "/rwanda-tour-photos/lakes.jpeg",
+		src: "/rwanda-twin-lakes-boat-tour/rwanda-tour-photos/lakes.jpeg",
 		alt: "Beautiful Twin Lakes landscape",
 	},
-	{ src: "/rwanda-tour-photos/tour.jpeg", alt: "Tour group experience" },
 	{
-		src: "/rwanda-tour-photos/dance.jpeg",
+		src: "/rwanda-twin-lakes-boat-tour/rwanda-tour-photos/tour.jpeg",
+		alt: "Tour group experience",
+	},
+	{
+		src: "/rwanda-twin-lakes-boat-tour/rwanda-tour-photos/dance.jpeg",
 		alt: "Traditional dance performance",
 	},
-	{ src: "/rwanda-tour-photos/scenic.jpeg", alt: "Scenic Rwanda view" },
+	{
+		src: "/rwanda-twin-lakes-boat-tour/rwanda-tour-photos/scenic.jpeg",
+		alt: "Scenic Rwanda view",
+	},
 ];
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap"
-			rel="stylesheet"
-		/>
-		<meta
-			name="viewport"
-			content="width=device-width, initial-scale=1, maximum-scale=1"
-		/>
-		<style>
-			:root {
-				--accent: #10b981; /* Emerald-500 */
-				--accent-dark: #065f46; /* Emerald-800 */
-				--primary: #059669; /* Emerald-600 */
-				--secondary: #34d399; /* Emerald-400 */
-				--tertiary: #047857; /* Emerald-700 */
-				--bg-color: #f8fafc; /* Slate-50 */
-			}
-			body {
-				background-color: var(--bg-color);
-				background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2310b981' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-			}
-			.section-title {
-				color: var(--accent-dark);
-				position: relative;
-				display: inline-block;
-				margin-bottom: 1.5rem;
-				font-family: "Baloo 2", cursive;
-			}
-			.section-title::after {
-				content: "";
-				position: absolute;
-				bottom: -0.5rem;
-				left: 0;
-				width: 100%;
-				height: 0.25rem;
-				background-color: var(--accent);
-				border-radius: 9999px;
-				opacity: 0.3;
-			}
-			.whatsapp-button {
-				display: inline-flex;
-				align-items: center;
-				gap: 0.5rem;
-				background-color: #20be5a;
-				color: white;
-				padding: 0.75rem 1.5rem;
-				border-radius: 2rem;
-				font-weight: 500;
-				transition: all 0.2s;
-				box-shadow:
-					0 4px 6px -1px rgba(0, 0, 0, 0.1),
-					0 2px 4px -1px rgba(0, 0, 0, 0.06);
-			}
-			.whatsapp-button:hover {
-				background-color: #128c7e;
-				transform: translateY(-2px);
-				box-shadow:
-					0 10px 15px -3px rgba(0, 0, 0, 0.1),
-					0 4px 6px -2px rgba(0, 0, 0, 0.05);
-			}
-		</style>
-	</head>
-	<body class="relative mx-auto mt-0 md:px-8 overflow-x-hidden">
-		<!-- Rich background with decorative elements -->
-		<div
-			class="z-0 absolute inset-0 bg-gradient-to-br from-amber-100/80 via-sky-50 to-amber-50"
-		>
+<Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+	<!-- Hero Section -->
+	<div class="z-10 relative mx-auto mt-16 md:mt-24 container">
+		<div class="mb-12 text-center">
+			<p class="mb-2 font-medium text-amber-700 uppercase tracking-wider">
+				Authentic Local Experience
+			</p>
+			<h1
+				class="mb-4 font-bold text-gray-700 text-4xl md:text-5xl leading-tight"
+			>
+				Twin Lakes<br />Tours Rwanda
+			</h1>
+			<p class="mx-auto max-w-2xl text-gray-700 text-lg">
+				Discover the hidden beauty of Rwanda with our authentic local
+				guided tours.
+			</p>
 		</div>
 
-		<!-- <Header /> -->
-		<main
-			class="relative space-y-16 mx-auto mt-0 px-4 md:px-8 max-w-[1000px] overflow-hidden"
+		<div class="shadow-xl mb-8 rounded-xl overflow-hidden">
+			<img
+				src="/rwanda-twin-lakes-boat-tour/rwanda-tour-photos/scenic.jpeg"
+				alt="Scenic Rwanda landscape"
+				class="w-full h-96 object-cover"
+				loading="eager"
+			/>
+		</div>
+	</div>
+	<!-- Search/Info points under the title -->
+	<div
+		class="flex md:flex-row flex-col items-start gap-6 md:gap-2 bg-white/50 shadow-lg backdrop-blur-md mt-6 p-4 border border-amber-200 rounded-xl"
+	>
+		<div
+			class="flex md:flex-col flex-1 items-center md:items-start gap-4 w-full md:w-auto"
 		>
-			<!-- Hero Section -->
-			<div class="z-10 relative mx-auto mt-16 md:mt-24 container">
-				<div class="mb-12 text-center">
-					<p
-						class="mb-2 font-medium text-amber-700 uppercase tracking-wider"
-					>
-						Authentic Local Experience
-					</p>
-					<h1
-						class="mb-4 font-bold text-gray-700 text-4xl md:text-5xl leading-tight"
-					>
-						Twin Lakes<br />Tours Rwanda
-					</h1>
-					<p class="mx-auto max-w-2xl text-gray-700 text-lg">
-						Discover the hidden beauty of Rwanda with our authentic
-						local guided tours.
+			<div
+				class="bg-amber-200 shadow-inner p-3 rounded-full text-amber-700"
+			>
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					class="w-6 h-6"
+					viewBox="0 0 20 20"
+					fill="currentColor"
+				>
+					<path
+						fill-rule="evenodd"
+						d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+						clip-rule="evenodd"></path>
+				</svg>
+			</div>
+			<div>
+				<p class="font-medium text-gray-800">
+					Twin Lakes, Northern Rwanda
+				</p>
+				<p class="text-gray-600 text-sm">Lake Burera & Lake Ruhondo</p>
+			</div>
+		</div>
+
+		<div
+			class="flex md:flex-col flex-1 items-center md:items-start gap-4 w-full md:w-auto"
+		>
+			<div
+				class="bg-blue-200 shadow-inner p-3 rounded-full text-blue-700"
+			>
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					class="w-6 h-6"
+					viewBox="0 0 20 20"
+					fill="currentColor"
+				>
+					<path
+						fill-rule="evenodd"
+						d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
+						clip-rule="evenodd"></path>
+				</svg>
+			</div>
+			<div>
+				<p class="font-medium text-gray-800">4 Hour Experience</p>
+				<p class="text-gray-600 text-sm">
+					Boat tour, hiking & local culture
+				</p>
+			</div>
+		</div>
+
+		<div
+			class="flex md:flex-col flex-1 items-center md:items-start gap-4 w-full md:w-auto"
+		>
+			<div class="bg-emerald-100 p-3 rounded-full text-emerald-600">
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					class="w-6 h-6"
+					viewBox="0 0 20 20"
+					fill="currentColor"
+				>
+					<path
+						d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"
+					></path>
+				</svg>
+			</div>
+			<div>
+				<p class="font-medium text-gray-800">Local Guide: Abiathar</p>
+				<p class="text-gray-500 text-sm">
+					Born and raised in the region
+				</p>
+			</div>
+		</div>
+	</div>
+
+	<!-- Tour Options Section -->
+	<section class="mt-16">
+		<h2 class="mb-8 text-3xl section-title">
+			Choose Your Rwanda Adventure
+		</h2>
+
+		<div class="gap-8 grid grid-cols-1 lg:grid-cols-2">
+			<!-- Twin Lakes Tour -->
+			<div
+				class="relative bg-white/70 shadow-lg backdrop-blur-sm p-6 border border-emerald-200 rounded-xl overflow-hidden"
+			>
+				<div
+					class="top-0 right-0 absolute bg-emerald-500 px-3 py-1 rounded-bl-lg font-medium text-white text-sm"
+				>
+					Most Popular
+				</div>
+				<div class="mb-4">
+					<h3 class="mb-2 font-semibold text-emerald-800 text-xl">
+						Twin Lakes Island Tour
+					</h3>
+					<p class="font-medium text-emerald-600">
+						4 Hours • Cultural Experience
 					</p>
 				</div>
+				<p class="mb-4 text-gray-700">
+					Experience authentic island life with our signature Twin
+					Lakes tour. Visit Batutsi Island, meet local families, learn
+					traditional brewing, and enjoy stunning lake views.
+				</p>
+				<ul class="space-y-2 mb-6 text-gray-600 text-sm">
+					<li class="flex items-center gap-2">
+						<div class="bg-emerald-400 rounded-full w-1.5 h-1.5">
+						</div>
+						Boat ride across Twin Lakes
+					</li>
+					<li class="flex items-center gap-2">
+						<div class="bg-emerald-400 rounded-full w-1.5 h-1.5">
+						</div>
+						Mountain hike with panoramic views
+					</li>
+					<li class="flex items-center gap-2">
+						<div class="bg-emerald-400 rounded-full w-1.5 h-1.5">
+						</div>
+						Traditional banana beer making
+					</li>
+					<li class="flex items-center gap-2">
+						<div class="bg-emerald-400 rounded-full w-1.5 h-1.5">
+						</div>
+						Family visit & local cuisine
+					</li>
+				</ul>
+				<div class="flex gap-3">
+					<a
+						href="/rwanda-twin-lakes-boat-tour/twin-lakes-tour"
+						class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 px-4 py-2 rounded-lg font-medium text-white transition-all"
+					>
+						Learn More
+					</a>
+					<a
+						href="https://wa.me/250726606622?text=Hello%20Abiathar,%20I'm%20interested%20in%20booking%20a%20Twin%20Lakes%20Island%20Tour.%20Please%20provide%20more%20information."
+						target="_blank"
+						class="inline-flex items-center gap-2 bg-emerald-100 hover:bg-emerald-200 px-4 py-2 rounded-lg font-medium text-emerald-700 transition-all"
+					>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							class="w-4 h-4"
+							viewBox="0 0 24 24"
+							fill="currentColor"
+						>
+							<path
+								d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+							></path>
+						</svg>
+						Book Now (250 726 606 622)
+					</a>
+				</div>
+			</div>
 
-				<div class="shadow-xl mb-8 rounded-xl overflow-hidden">
-					<img
-						src="/rwanda-tour-photos/scenic.jpeg"
-						alt="Scenic Rwanda landscape"
-						class="w-full h-96 object-cover"
-						loading="eager"
+			<!-- 9-Day Tour -->
+			<div
+				class="relative bg-white/70 shadow-lg backdrop-blur-sm p-6 border border-amber-200 rounded-xl overflow-hidden"
+			>
+				<div
+					class="top-0 right-0 absolute bg-amber-500 px-3 py-1 rounded-bl-lg font-medium text-white text-sm"
+				>
+					Premium
+				</div>
+				<div class="mb-4">
+					<h3 class="mb-2 font-semibold text-amber-800 text-xl">
+						9-Day Rwanda Adventure
+					</h3>
+					<p class="font-medium text-amber-600">
+						9 Days • Complete Experience
+					</p>
+				</div>
+				<p class="mb-4 text-gray-700">
+					The ultimate Rwanda experience covering all major national
+					parks. From mountain gorillas to Big Five safaris, coffee
+					plantations to canopy walks - see it all!
+				</p>
+				<ul class="space-y-2 mb-6 text-gray-600 text-sm">
+					<li class="flex items-center gap-2">
+						<div class="bg-amber-400 rounded-full w-1.5 h-1.5">
+						</div>
+						Akagera National Park safari
+					</li>
+					<li class="flex items-center gap-2">
+						<div class="bg-amber-400 rounded-full w-1.5 h-1.5">
+						</div>
+						Mountain gorilla trekking
+					</li>
+					<li class="flex items-center gap-2">
+						<div class="bg-amber-400 rounded-full w-1.5 h-1.5">
+						</div>
+						Lake Kivu & coffee plantation
+					</li>
+					<li class="flex items-center gap-2">
+						<div class="bg-amber-400 rounded-full w-1.5 h-1.5">
+						</div>
+						Nyungwe canopy walk
+					</li>
+				</ul>
+				<div class="flex gap-3">
+					<a
+						href="/rwanda-twin-lakes-boat-tour/tour-of-rwanda"
+						class="inline-flex items-center gap-2 bg-amber-600 hover:bg-amber-700 px-4 py-2 rounded-lg font-medium text-white transition-all"
+					>
+						Learn More
+					</a>
+					<a
+						href="https://wa.me/250726606622?text=Hello%20Abiathar,%20I'm%20interested%20in%20booking%20the%209-day%20Rwanda%20tour%20covering%20Akagera,%20Nyungwe,%20Lake%20Kivu,%20and%20Volcanoes%20National%20Parks.%20Please%20provide%20more%20information."
+						target="_blank"
+						class="inline-flex items-center gap-2 bg-amber-100 hover:bg-amber-200 px-4 py-2 rounded-lg font-medium text-amber-700 transition-all"
+					>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							class="w-4 h-4"
+							viewBox="0 0 24 24"
+							fill="currentColor"
+						>
+							<path
+								d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+							></path>
+						</svg>
+						Book Now
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Your Local Guide Section -->
+	<section class="mt-16">
+		<h2 class="mb-8 text-3xl section-title">Your Local Guide</h2>
+
+		<div class="flex md:flex-row flex-col items-center gap-10">
+			<div class="mt-8 md:mt-0 w-full md:w-1/3">
+				<div
+					class="shadow-lg mx-auto border-[var(--accent)] border-4 rounded-full w-48 h-48 overflow-hidden"
+				>
+					<Image
+						src={adi}
+						alt="Abiathar Ihimbazwe - Tour Guide"
+						class="w-full h-full object-cover"
 					/>
 				</div>
 			</div>
-			<!-- Search/Info points under the title -->
-			<div
-				class="flex md:flex-row flex-col items-start gap-6 md:gap-2 bg-white/50 shadow-lg backdrop-blur-md mt-6 p-4 border border-amber-200 rounded-xl"
-			>
-				<div
-					class="flex md:flex-col flex-1 items-center md:items-start gap-4 w-full md:w-auto"
-				>
-					<div
-						class="bg-amber-200 shadow-inner p-3 rounded-full text-amber-700"
+			<div class="w-full md:w-2/3">
+				<div class="mb-4 guide-info">
+					<h3
+						class="font-semibold text-2xl text-[var(--accent-dark)]"
 					>
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							class="w-6 h-6"
-							viewBox="0 0 20 20"
-							fill="currentColor"
-						>
-							<path
-								fill-rule="evenodd"
-								d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
-								clip-rule="evenodd"></path>
-						</svg>
-					</div>
-					<div>
-						<p class="font-medium text-gray-800">
-							Twin Lakes, Northern Rwanda
-						</p>
-						<p class="text-gray-600 text-sm">
-							Lake Burera & Lake Ruhondo
-						</p>
-					</div>
-				</div>
-
-				<div
-					class="flex md:flex-col flex-1 items-center md:items-start gap-4 w-full md:w-auto"
-				>
-					<div
-						class="bg-blue-200 shadow-inner p-3 rounded-full text-blue-700"
-					>
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							class="w-6 h-6"
-							viewBox="0 0 20 20"
-							fill="currentColor"
-						>
-							<path
-								fill-rule="evenodd"
-								d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
-								clip-rule="evenodd"></path>
-						</svg>
-					</div>
-					<div>
-						<p class="font-medium text-gray-800">
-							4 Hour Experience
-						</p>
-						<p class="text-gray-600 text-sm">
-							Boat tour, hiking & local culture
-						</p>
-					</div>
-				</div>
-
-				<div
-					class="flex md:flex-col flex-1 items-center md:items-start gap-4 w-full md:w-auto"
-				>
-					<div
-						class="bg-emerald-100 p-3 rounded-full text-emerald-600"
-					>
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							class="w-6 h-6"
-							viewBox="0 0 20 20"
-							fill="currentColor"
-						>
-							<path
-								d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"
-							></path>
-						</svg>
-					</div>
-					<div>
-						<p class="font-medium text-gray-800">
-							Local Guide: Abiathar
-						</p>
-						<p class="text-gray-500 text-sm">
-							Born and raised in the region
-						</p>
-					</div>
-				</div>
-			</div>
-		</main>
-
-		<!-- Tour Options Section -->
-		<section class="mt-16">
-			<h2 class="mb-8 text-3xl section-title">
-				Choose Your Rwanda Adventure
-			</h2>
-
-			<div class="gap-8 grid grid-cols-1 lg:grid-cols-2">
-				<!-- Twin Lakes Tour -->
-				<div
-					class="relative bg-white/70 shadow-lg backdrop-blur-sm p-6 border border-emerald-200 rounded-xl overflow-hidden"
-				>
-					<div
-						class="top-0 right-0 absolute bg-emerald-500 px-3 py-1 rounded-bl-lg font-medium text-white text-sm"
-					>
-						Most Popular
-					</div>
-					<div class="mb-4">
-						<h3 class="mb-2 font-semibold text-emerald-800 text-xl">
-							Twin Lakes Island Tour
-						</h3>
-						<p class="font-medium text-emerald-600">
-							4 Hours • Cultural Experience
-						</p>
-					</div>
-					<p class="mb-4 text-gray-700">
-						Experience authentic island life with our signature Twin
-						Lakes tour. Visit Batutsi Island, meet local families,
-						learn traditional brewing, and enjoy stunning lake
-						views.
+						Abiathar Ihimbazwe
+					</h3>
+					<p class="text-[var(--tertiary)] text-lg">
+						Native Islander & Cultural Expert
 					</p>
-					<ul class="space-y-2 mb-6 text-gray-600 text-sm">
-						<li class="flex items-center gap-2">
-							<div
-								class="bg-emerald-400 rounded-full w-1.5 h-1.5"
-							>
-							</div>
-							Boat ride across Twin Lakes
-						</li>
-						<li class="flex items-center gap-2">
-							<div
-								class="bg-emerald-400 rounded-full w-1.5 h-1.5"
-							>
-							</div>
-							Mountain hike with panoramic views
-						</li>
-						<li class="flex items-center gap-2">
-							<div
-								class="bg-emerald-400 rounded-full w-1.5 h-1.5"
-							>
-							</div>
-							Traditional banana beer making
-						</li>
-						<li class="flex items-center gap-2">
-							<div
-								class="bg-emerald-400 rounded-full w-1.5 h-1.5"
-							>
-							</div>
-							Family visit & local cuisine
-						</li>
-					</ul>
-					<div class="flex gap-3">
-						<a
-							href="/twin-lakes-tour"
-							class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 px-4 py-2 rounded-lg font-medium text-white transition-all"
-						>
-							Learn More
-						</a>
-						<a
-							href="https://wa.me/250726606622?text=Hello%20Abiathar,%20I'm%20interested%20in%20booking%20a%20Twin%20Lakes%20Island%20Tour.%20Please%20provide%20more%20information."
-							target="_blank"
-							class="inline-flex items-center gap-2 bg-emerald-100 hover:bg-emerald-200 px-4 py-2 rounded-lg font-medium text-emerald-700 transition-all"
-						>
-							<svg
-								xmlns="http://www.w3.org/2000/svg"
-								class="w-4 h-4"
-								viewBox="0 0 24 24"
-								fill="currentColor"
-							>
-								<path
-									d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
-								></path>
-							</svg>
-							Book Now
-						</a>
-					</div>
 				</div>
 
-				<!-- 9-Day Tour -->
-				<div
-					class="relative bg-white/70 shadow-lg backdrop-blur-sm p-6 border border-amber-200 rounded-xl overflow-hidden"
-				>
-					<div
-						class="top-0 right-0 absolute bg-amber-500 px-3 py-1 rounded-bl-lg font-medium text-white text-sm"
-					>
-						Premium
-					</div>
-					<div class="mb-4">
-						<h3 class="mb-2 font-semibold text-amber-800 text-xl">
-							9-Day Rwanda Adventure
-						</h3>
-						<p class="font-medium text-amber-600">
-							9 Days • Complete Experience
-						</p>
-					</div>
-					<p class="mb-4 text-gray-700">
-						The ultimate Rwanda experience covering all major
-						national parks. From mountain gorillas to Big Five
-						safaris, coffee plantations to canopy walks - see it
-						all!
-					</p>
-					<ul class="space-y-2 mb-6 text-gray-600 text-sm">
-						<li class="flex items-center gap-2">
-							<div class="bg-amber-400 rounded-full w-1.5 h-1.5">
-							</div>
-							Akagera National Park safari
-						</li>
-						<li class="flex items-center gap-2">
-							<div class="bg-amber-400 rounded-full w-1.5 h-1.5">
-							</div>
-							Mountain gorilla trekking
-						</li>
-						<li class="flex items-center gap-2">
-							<div class="bg-amber-400 rounded-full w-1.5 h-1.5">
-							</div>
-							Lake Kivu & coffee plantation
-						</li>
-						<li class="flex items-center gap-2">
-							<div class="bg-amber-400 rounded-full w-1.5 h-1.5">
-							</div>
-							Nyungwe canopy walk
-						</li>
-					</ul>
-					<div class="flex gap-3">
-						<a
-							href="/tour-of-rwanda"
-							class="inline-flex items-center gap-2 bg-amber-600 hover:bg-amber-700 px-4 py-2 rounded-lg font-medium text-white transition-all"
-						>
-							Learn More
-						</a>
-						<a
-							href="https://wa.me/250726606622?text=Hello%20Abiathar,%20I'm%20interested%20in%20booking%20the%209-day%20Rwanda%20tour%20covering%20Akagera,%20Nyungwe,%20Lake%20Kivu,%20and%20Volcanoes%20National%20Parks.%20Please%20provide%20more%20information."
-							target="_blank"
-							class="inline-flex items-center gap-2 bg-amber-100 hover:bg-amber-200 px-4 py-2 rounded-lg font-medium text-amber-700 transition-all"
-						>
-							<svg
-								xmlns="http://www.w3.org/2000/svg"
-								class="w-4 h-4"
-								viewBox="0 0 24 24"
-								fill="currentColor"
-							>
-								<path
-									d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
-								></path>
-							</svg>
-							Book Now
-						</a>
-					</div>
-				</div>
+				<p class="mb-4 text-gray-700">
+					Born and raised on Batutsi Island, Abiathar knows all 70
+					families (about 200 people) who call this island home. This
+					intimate community offers an authentic glimpse into
+					traditional Rwandan island life.
+				</p>
+				<p class="text-gray-700">
+					With family still on the island, Abiathar provides a genuine
+					local perspective you won't find in typical tourist
+					experiences.
+				</p>
 			</div>
-		</section>
+		</div>
+	</section>
 
-		<!-- Your Local Guide Section -->
-		<section class="mt-16">
-			<h2 class="mb-8 text-3xl section-title">Your Local Guide</h2>
+	<!-- Featured Photos Section -->
+	<section class="mt-16">
+		<h2 class="mb-8 text-3xl section-title">Experience Gallery</h2>
 
-			<div class="flex md:flex-row flex-col items-center gap-10">
-				<div class="mt-8 md:mt-0 w-full md:w-1/3">
-					<div
-						class="shadow-lg mx-auto border-[var(--accent)] border-4 rounded-full w-48 h-48 overflow-hidden"
-					>
-						<Image
-							src={adi}
-							alt="Abiathar Ihimbazwe - Tour Guide"
-							class="w-full h-full object-cover"
+		<div class="gap-4 grid grid-cols-2 md:grid-cols-4 mb-8">
+			{
+				featuredPhotos.map((photo) => (
+					<div class="group shadow-md hover:shadow-xl rounded-lg overflow-hidden transition-all hover:-translate-y-1 duration-300 transform">
+						<img
+							src={photo.src}
+							alt={photo.alt}
+							class="w-full h-32 md:h-40 object-cover group-hover:scale-105 transition-transform duration-300"
+							loading="lazy"
+							onerror="this.style.display='none'"
 						/>
 					</div>
-				</div>
-				<div class="w-full md:w-2/3">
-					<div class="mb-4 guide-info">
-						<h3
-							class="font-semibold text-2xl text-[var(--accent-dark)]"
-						>
-							Abiathar Ihimbazwe
-						</h3>
-						<p class="text-[var(--tertiary)] text-lg">
-							Native Islander & Cultural Expert
-						</p>
-					</div>
+				))
+			}
+		</div>
 
-					<p class="mb-4 text-gray-700">
-						Born and raised on Batutsi Island, Abiathar knows all 70
-						families (about 200 people) who call this island home.
-						This intimate community offers an authentic glimpse into
-						traditional Rwandan island life.
-					</p>
-					<p class="text-gray-700">
-						With family still on the island, Abiathar provides a
-						genuine local perspective you won't find in typical
-						tourist experiences.
-					</p>
-				</div>
-			</div>
-		</section>
-
-		<!-- Featured Photos Section -->
-		<section class="mt-16">
-			<h2 class="mb-8 text-3xl section-title">Experience Gallery</h2>
-
-			<div class="gap-4 grid grid-cols-2 md:grid-cols-4 mb-8">
-				{
-					featuredPhotos.map((photo) => (
-						<div class="group shadow-md hover:shadow-xl rounded-lg overflow-hidden transition-all hover:-translate-y-1 duration-300 transform">
-							<img
-								src={photo.src}
-								alt={photo.alt}
-								class="w-full h-32 md:h-40 object-cover group-hover:scale-105 transition-transform duration-300"
-								loading="lazy"
-								onerror="this.style.display='none'"
-							/>
-						</div>
-					))
-				}
-			</div>
-
-			<div class="text-center">
-				<a
-					href="/twin-lakes-tour"
-					class="inline-flex items-center gap-2 font-medium text-emerald-600 hover:text-emerald-700 transition-colors"
+		<div class="text-center">
+			<a
+				href="/rwanda-twin-lakes-boat-tour/twin-lakes-tour"
+				class="inline-flex items-center gap-2 font-medium text-emerald-600 hover:text-emerald-700 transition-colors"
+			>
+				View complete Twin Lakes gallery
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					class="w-4 h-4"
+					viewBox="0 0 20 20"
+					fill="currentColor"
 				>
-					View complete Twin Lakes gallery
-					<svg
-						xmlns="http://www.w3.org/2000/svg"
-						class="w-4 h-4"
-						viewBox="0 0 20 20"
-						fill="currentColor"
-					>
-						<path
-							fill-rule="evenodd"
-							d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-							clip-rule="evenodd"></path>
-					</svg>
-				</a>
-			</div>
-		</section>
-
-		<Footer />
-	</body>
-</html>
+					<path
+						fill-rule="evenodd"
+						d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+						clip-rule="evenodd"></path>
+				</svg>
+			</a>
+		</div>
+	</section>
+</Layout>
