@@ -15,49 +15,54 @@ const { photos, title = "Photo Gallery" } = Astro.props;
 
 <section class="mt-16">
   <h2 class="mb-8 text-3xl section-title">{title}</h2>
-  
+
   <div class="gap-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-    {photos.map((photo, index) => (
-      <div 
-        class="group cursor-pointer rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
-        onclick={`openLightbox(${index})`}
-      >
-        <img
-          src={photo.src}
-          alt={photo.alt}
-          class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
-          loading="lazy"
-        />
-        {photo.title && (
-          <div class="bg-white p-3">
-            <p class="font-medium text-gray-800 text-sm">{photo.title}</p>
-          </div>
-        )}
-      </div>
-    ))}
+    {
+      photos.map((photo, index) => (
+        <div
+          class="group shadow-md hover:shadow-xl rounded-lg overflow-hidden transition-all hover:-translate-y-1 duration-300 cursor-pointer transform"
+          onclick={`openLightbox(${index})`}
+        >
+          <img
+            src={photo.src}
+            alt={photo.alt}
+            class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+            loading="lazy"
+          />
+        </div>
+      ))
+    }
   </div>
-  
+
   <!-- Lightbox -->
-  <div id="lightbox" class="fixed inset-0 bg-black bg-opacity-90 z-50 hidden flex items-center justify-center p-4">
+  <div
+    id="lightbox"
+    class="hidden z-50 fixed inset-0 flex justify-center items-center bg-black bg-opacity-90 p-4"
+  >
     <div class="relative max-w-4xl max-h-full">
-      <button 
+      <button
         onclick="closeLightbox()"
-        class="absolute top-4 right-4 text-white text-2xl z-10 w-10 h-10 rounded-full bg-black bg-opacity-50 hover:bg-opacity-75 transition-all"
+        class="top-4 right-4 z-10 absolute bg-black bg-opacity-50 hover:bg-opacity-75 rounded-full w-10 h-10 text-white text-2xl transition-all"
       >
         ×
       </button>
-      <img id="lightbox-image" src="" alt="" class="max-w-full max-h-full object-contain" />
+      <img
+        id="lightbox-image"
+        src=""
+        alt=""
+        class="max-w-full max-h-full object-contain"
+      />
       <div class="flex justify-between items-center mt-4">
-        <button 
+        <button
           onclick="previousImage()"
-          class="text-white px-4 py-2 bg-black bg-opacity-50 rounded hover:bg-opacity-75 transition-all"
+          class="bg-black bg-opacity-50 hover:bg-opacity-75 px-4 py-2 rounded text-white transition-all"
         >
           ← Previous
         </button>
         <span id="lightbox-counter" class="text-white"></span>
-        <button 
+        <button
           onclick="nextImage()"
-          class="text-white px-4 py-2 bg-black bg-opacity-50 rounded hover:bg-opacity-75 transition-all"
+          class="bg-black bg-opacity-50 hover:bg-opacity-75 px-4 py-2 rounded text-white transition-all"
         >
           Next →
         </button>
@@ -72,7 +77,7 @@ const { photos, title = "Photo Gallery" } = Astro.props;
     position: relative;
     display: inline-block;
     margin-bottom: 1.5rem;
-    font-family: 'Baloo 2', cursive;
+    font-family: "Baloo 2", cursive;
   }
   .section-title::after {
     content: "";
@@ -92,49 +97,52 @@ const { photos, title = "Photo Gallery" } = Astro.props;
   let galleryPhotos = [];
 
   // Initialize the gallery photos array
-  window.addEventListener('DOMContentLoaded', () => {
-    const photoElements = document.querySelectorAll('[onclick*="openLightbox"]');
-    galleryPhotos = Array.from(photoElements).map(el => {
-      const img = el.querySelector('img');
+  window.addEventListener("DOMContentLoaded", () => {
+    const photoElements = document.querySelectorAll(
+      '[onclick*="openLightbox"]',
+    );
+    galleryPhotos = Array.from(photoElements).map((el) => {
+      const img = el.querySelector("img");
       return {
-        src: img?.src || '',
-        alt: img?.alt || ''
+        src: img?.src || "",
+        alt: img?.alt || "",
       };
     });
   });
 
-  window.openLightbox = function(index) {
+  window.openLightbox = function (index) {
     currentImageIndex = index;
     updateLightboxImage();
-    const lightbox = document.getElementById('lightbox');
+    const lightbox = document.getElementById("lightbox");
     if (lightbox) {
-      lightbox.classList.remove('hidden');
-      document.body.style.overflow = 'hidden';
+      lightbox.classList.remove("hidden");
+      document.body.style.overflow = "hidden";
     }
-  }
+  };
 
-  window.closeLightbox = function() {
-    const lightbox = document.getElementById('lightbox');
+  window.closeLightbox = function () {
+    const lightbox = document.getElementById("lightbox");
     if (lightbox) {
-      lightbox.classList.add('hidden');
-      document.body.style.overflow = 'auto';
+      lightbox.classList.add("hidden");
+      document.body.style.overflow = "auto";
     }
-  }
+  };
 
-  window.previousImage = function() {
-    currentImageIndex = (currentImageIndex - 1 + galleryPhotos.length) % galleryPhotos.length;
+  window.previousImage = function () {
+    currentImageIndex =
+      (currentImageIndex - 1 + galleryPhotos.length) % galleryPhotos.length;
     updateLightboxImage();
-  }
+  };
 
-  window.nextImage = function() {
+  window.nextImage = function () {
     currentImageIndex = (currentImageIndex + 1) % galleryPhotos.length;
     updateLightboxImage();
-  }
+  };
 
   function updateLightboxImage() {
-    const lightboxImage = document.getElementById('lightbox-image');
-    const lightboxCounter = document.getElementById('lightbox-counter');
-    
+    const lightboxImage = document.getElementById("lightbox-image");
+    const lightboxCounter = document.getElementById("lightbox-counter");
+
     if (galleryPhotos[currentImageIndex] && lightboxImage && lightboxCounter) {
       lightboxImage.src = galleryPhotos[currentImageIndex].src;
       lightboxImage.alt = galleryPhotos[currentImageIndex].alt;
@@ -143,19 +151,19 @@ const { photos, title = "Photo Gallery" } = Astro.props;
   }
 
   // Close lightbox on escape key
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
       window.closeLightbox();
-    } else if (e.key === 'ArrowLeft') {
+    } else if (e.key === "ArrowLeft") {
       window.previousImage();
-    } else if (e.key === 'ArrowRight') {
+    } else if (e.key === "ArrowRight") {
       window.nextImage();
     }
   });
 
   // Close lightbox on background click
-  document.getElementById('lightbox')?.addEventListener('click', (e) => {
-    if (e.target && e.target.id === 'lightbox') {
+  document.getElementById("lightbox")?.addEventListener("click", (e) => {
+    if (e.target && e.target.id === "lightbox") {
       window.closeLightbox();
     }
   });
